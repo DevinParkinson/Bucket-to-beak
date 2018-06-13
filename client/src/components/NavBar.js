@@ -23,13 +23,13 @@ class NavBar extends Component {
       <Menu.Menu position='right'>
         <Link to='/register'>
           <Button>
-            <Icon name='signup' size='large' />
+            <Icon name='signup' />
             Sign Up Now!
           </Button>
         </Link>
         <Link to='/login'>
-          <Button>
-          <Icon name='user outline' size='large' />
+          <Button overflow='hidden'>
+          <Icon name='user outline' />
           Login
           </Button>
         </Link>
@@ -43,12 +43,12 @@ class NavBar extends Component {
         <Menu pointing secondary>
           <Link to='/'>
             <Button>
-              <Icon name='home' size='large' />
+              <Icon name='home' />
               Home
             </Button>
           </Link>
           <Button>
-            <Icon name='info circle' size='large' />
+            <Icon name='info circle' />
             About
           </Button>
           { this.rightNavs() }
