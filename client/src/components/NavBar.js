@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
+import styled from 'styled-components';
+import Logo from '../Images/Fiverr.png';
+
+const LogoImage = styled(Image)`
+  height: 8vh;
+  float: center
+`
+
+const NavBack = styled.div`
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnlkZdrRTw3lyRo2GvXFa4IDBRW4ew0n74C7KZnh35vnvGm20bfA");
+`
 
 class NavBar extends Component {
   rightNavs = () => {
@@ -39,21 +50,18 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
+      <NavBack>
         <Menu pointing secondary>
-          <Link to='/'>
-            <Button>
-              <Icon name='home' />
-              Home
-            </Button>
-          </Link>
           <Button>
             <Icon name='info circle' />
             About
           </Button>
+          <Link to='/' centered>
+            <LogoImage src={Logo} />
+          </Link>
           { this.rightNavs() }
         </Menu>
-      </div>
+      </NavBack>
     );
   }
 }
