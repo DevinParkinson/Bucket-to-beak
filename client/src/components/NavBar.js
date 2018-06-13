@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Image, Divider } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
@@ -8,7 +8,8 @@ import styled from 'styled-components';
 import Logo from '../Images/Fiverr.png';
 
 const LogoImage = styled(Image)`
-  height: 12vh;
+  height: 10vh;
+  width: auto;
   display: flex;
   justify-content: center;
 `
@@ -45,16 +46,16 @@ class NavBar extends Component {
     }
     return (
       <Menu.Menu position='right' secondary>
-        <Menu.Item>
+        <Button inverted>
           <Link to='/login' style={{color: '#000000'}}>
             <Icon name='user outline' />
             Login
           </Link>
-        </Menu.Item>
-        <Menu.Item>
-            <Icon name='info circle' />
-            About
-        </Menu.Item>
+        </Button>
+        <Button inverted style={{color: '#000000'}}>
+          <Icon name='info circle' />
+          About
+        </Button>
       </Menu.Menu>
     );
   }
@@ -69,12 +70,6 @@ class NavBar extends Component {
                 <LogoImage src={Logo} />
               </Link>
             </Menu.Item>
-                <Link to='/register' style={{color: '#ffffff'}}>
-                  <Button positive size='large'>
-                    <Icon name='signup' />
-                    Sign Up Now!
-                  </Button>
-                </Link>
             { this.rightNavs() }
           </Menu>
         </NavFront>
