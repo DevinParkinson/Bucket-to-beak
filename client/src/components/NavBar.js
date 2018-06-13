@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
+import { Icon, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
 
@@ -21,10 +22,16 @@ class NavBar extends Component {
     return (
       <Menu.Menu position='right'>
         <Link to='/register'>
-          <Menu.Item name='Register' />
+          <Button>
+            <Icon name='signup' size='large' />
+            Sign Up Now!
+          </Button>
         </Link>
         <Link to='/login'>
-          <Menu.Item name='Login' />
+          <Button>
+          <Icon name='user outline' size='large' />
+          Login
+          </Button>
         </Link>
       </Menu.Menu>
     );
@@ -35,9 +42,15 @@ class NavBar extends Component {
       <div>
         <Menu pointing secondary>
           <Link to='/'>
-            <Menu.Item name='Home' />
+            <Button>
+              <Icon name='home' size='large' />
+              Home
+            </Button>
           </Link>
-          <Menu.Item name='About' />
+          <Button>
+            <Icon name='info circle' size='large' />
+            About
+          </Button>
           { this.rightNavs() }
         </Menu>
       </div>
