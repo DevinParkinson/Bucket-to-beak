@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Menu, Image } from 'semantic-ui-react';
+import { Menu, Image, Divider, Icon } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
-import { Icon, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
 import styled from 'styled-components';
-import Logo from '../Images/Fiverr.png';
+import Logo from '../images/Fiverr.png';
 
 const LogoImage = styled(Image)`
   height: 10vh;
@@ -22,7 +21,7 @@ const NavBack = styled.div`
 `
 
 const NavFront = styled.div`
-  background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3380034.jpg");
+  background-color: white;
   display: block;
   align-self: center;
   margin-left: 10%;
@@ -45,17 +44,20 @@ class NavBar extends Component {
       );
     }
     return (
-      <Menu.Menu position='right' secondary>
-        <Button inverted>
+      <Menu.Menu position='right'>
+        <Menu.Item>
           <Link to='/login' style={{color: '#000000'}}>
-            <Icon name='user outline' />
-            Login
+          <Icon name='user outline' />
+          Login
           </Link>
-        </Button>
-        <Button inverted style={{color: '#000000'}}>
-          <Icon name='info circle' />
-          About
-        </Button>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to='/about' style={{color: '#000000'}}>
+            <Icon name='info circle' />
+            About
+          </Link>
+        </Menu.Item>
+        <Divider hidden />
       </Menu.Menu>
     );
   }
@@ -64,7 +66,7 @@ class NavBar extends Component {
     return (
       <NavBack>
         <NavFront>
-          <Menu pointing>
+          <Menu secondary>
             <Menu.Item position='left'>
               <Link to='/'>
                 <LogoImage src={Logo} />

@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { Header } from 'semantic-ui-react';
 import styled from 'styled-components';
+import { Carousel } from 'react-responsive-carousel';
+import './carousel.css';
+import './main.css';
+import Compost1 from '../images/compost1.jpg';
+import Compost2 from '../images/compost2.jpg';
+import Compost3 from '../images/compost3.jpeg';
+import Compost4 from '../images/compost4.png';
+
 
 const AppContainer = styled.div`
   justify-content: center;
@@ -25,6 +33,24 @@ class Home extends Component {
     return (
       <FullApp>
         <AppContainer>
+          <Carousel autoPlay infiniteLoop width="fluid" showArrows={true}>
+              <div>
+                  <img src={Compost1} alt='Pic1' />
+                  <p className="legend">Bilge water yardarm chase Yellow Jack splice the main brace bounty skysail lateen sail lanyard Sea Legs.</p>
+              </div>
+              <div>
+                  <img src={Compost2} alt='Pic2' />
+                  <p className="legend">Chantey bucko Davy Jones Locker pressgang avast tack nipper American Main wherry broadside. Splice the main brace driver careen Jack Tar maroon long boat red ensign gangway lanyard chandler.</p>
+              </div>
+              <div>
+                  <img src={Compost3} alt='Pic3' />
+                  <p className="legend">Heave down barque deadlights rutters no prey, no pay league grapple quarter jolly boat capstan. Starboard grog blossom spanker matey lanyard parrel snow tender boom rigging.</p>
+              </div>
+              <div>
+                  <img src={Compost4} alt='Pic4' />
+                  <p className="legend">Measured fer yer chains Yellow Jack spyglass Jack Tar no prey, no pay yardarm spirits sutler scuppers six pounders.</p>
+              </div>
+        </Carousel>
           <Header as='h1' style={{fontFamily: 'Times New Roman'}}>Bucket To Beak Curbside Composting</Header>
           <Header>Main Page w/ Bullets</Header>
           <ul>Local</ul>
