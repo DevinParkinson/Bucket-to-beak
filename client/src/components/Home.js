@@ -16,7 +16,7 @@ const AppContainer = styled.div`
   background-size: cover;
   margin-left: 10%;
   margin-right: 10%;
-  height: 100vh;
+  height: auto;
   text-align: center;
   font-family: Courier;
   color: #ffffff;
