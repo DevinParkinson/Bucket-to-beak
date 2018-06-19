@@ -24,7 +24,7 @@ const FullApp = styled.div`
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3380034.jpg");
 `
 

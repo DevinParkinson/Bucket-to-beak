@@ -72,11 +72,20 @@ class NavBar extends Component {
                 <LogoImage src={Logo} />
               </Link>
             </Menu.Item>
+            <Menu.Item style={styles.text}>Local, Responsive, Regenerative</Menu.Item>
             { this.rightNavs() }
           </Menu>
         </NavFront>
       </NavBack>
     );
+  }
+}
+
+const styles = {
+  text: {
+    color: "#0adb0c",
+    fontFamily: "Comic Sans MS",
+    fontSize: "large",
   }
 }
 

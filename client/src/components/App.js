@@ -5,7 +5,7 @@ import Login from './Login';
 import Register from './Register';
 import Flash from './Flash';
 import Home from './Home';
-// import ProtectedRoute from './ProtectedRoute';
+import Footer from './Footer';
 import AuthRoute from './AuthRoute';
 import About from './About';
 import FetchUser from './FetchUser';
@@ -26,6 +26,7 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
+        <Footer />
       </div>
     );
   }
