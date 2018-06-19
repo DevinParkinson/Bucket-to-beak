@@ -36,7 +36,7 @@ class Home extends Component {
           <Carousel autoPlay infiniteLoop width="fluid" showArrows={true}>
               <div>
                   <img src={Compost1} alt='Pic1' />
-                  <p className="legend">Bilge water yardarm chase Yellow Jack splice the main brace bounty skysail lateen sail lanyard Sea Legs.</p>
+                  <p className="legend">Bilge water yardarm chase Yellow Jack splice the main brace bounty skysail lateen sail lanyard Sea Legs. Argggggh</p>
               </div>
               <div>
                   <img src={Compost2} alt='Pic2' />
