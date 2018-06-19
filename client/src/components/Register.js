@@ -5,14 +5,14 @@ import { registerUser } from '../actions/auth';
 import { setFlash } from '../actions/flash';
 
 class Register extends Component {
-  state = { email: '', password: '', passwordConfirmation: '' };
+  state = { email: '', password: '', passwordConfirmation: '', phone: '' };
 
   handleSubmit = event => {
     event.preventDefault();
-    const { email, password, passwordConfirmation } = this.state;
+    const { email, password, passwordConfirmation, phone } = this.state;
     const { dispatch, history } = this.props;
     if (password === passwordConfirmation) {
-      dispatch(registerUser(email, password, passwordConfirmation, history));
+      dispatch(registerUser(email, password, passwordConfirmation, phone, history));
     } else dispatch(setFlash('Passwords do not match!, please try again', 'red'));
   }
 
@@ -25,7 +25,7 @@ class Register extends Component {
   }
 
   render() {
-    const { email, password, passwordConfirmation } = this.state;
+    const { email, password, phone, passwordConfirmation } = this.state;
 
     return (
       <Segment basic>
@@ -38,6 +38,15 @@ class Register extends Component {
               placeholder='Email'
               required
               value={email}
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label htmlFor='phone'>Phone #</label>
+            <input
+              id='phone'
+              placeholder='Phone # eg: 123-456-7890'
+              value={phone}
               onChange={this.handleChange}
             />
           </Form.Field>

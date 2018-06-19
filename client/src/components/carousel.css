@@ -16,25 +16,6 @@
   .carousel .control-arrow:hover {
     opacity: 1;
     filter: alpha(opacity=100); }
-  .carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
-    margin: 0 5px;
-    display: inline-block;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    content: ''; }
-  .carousel .control-disabled.control-arrow {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    cursor: inherit;
-    display: none; }
-  .carousel .control-prev.control-arrow {
-    left: 0; }
-    .carousel .control-prev.control-arrow:before {
-      border-right: 8px solid #007c3b; }
-  .carousel .control-next.control-arrow {
-    right: 0; }
-    .carousel .control-next.control-arrow:before {
-      border-left: 8px solid #007c3b; }
 
 .carousel {
   position: center;
@@ -91,15 +72,6 @@
     position: relative;
     margin: 0;
     overflow: hidden; }
-    .carousel.carousel-slider .control-arrow {
-      top: 0;
-      color: #fff;
-      font-size: 26px;
-      bottom: 0;
-      margin-top: 0;
-      padding: 5px; }
-      .carousel.carousel-slider .control-arrow:hover {
-        background: rgba(0, 0, 0, 0.2); }
   .carousel .slider-wrapper {
     overflow: hidden;
     margin: auto;
@@ -183,13 +155,10 @@
       transition: opacity 0.35s ease-in-out; }
   .carousel .control-dots {
     position: absolute;
-    bottom: 0;
     margin: 10px 0;
     text-align: center;
     width: 100%; }
-    @media (min-width: 960px) {
-      .carousel .control-dots {
-        bottom: 0; } }
+    @media (min-width: 960px) { }
     .carousel .control-dots .dot {
       -webkit-transition: opacity 0.25s ease-in;
       -moz-transition: opacity 0.25s ease-in;

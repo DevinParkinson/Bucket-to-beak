@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Header, Accordian } from 'semantic-ui-react';
+import { Header, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import './carousel.css';
 import Compost1 from '../images/compost1.jpg';
@@ -40,6 +41,11 @@ class Home extends Component {
     return (
       <FullApp>
         <AppContainer>
+          <Link to="/register" style={styles.text}>
+            <Button fluid attached="top" positive>
+              Sign Up Now!
+            </Button>
+          </Link>
           <Header as='h1' style={{fontFamily: 'Times New Roman', color: "#ffffff"}}>Bucket To Beak Curbside Composting</Header>
           <Carousel1 autoPlay infiniteLoop width="fluid" showArrows={true}>
               <div>
@@ -62,6 +68,12 @@ class Home extends Component {
         </AppContainer>
       </FullApp>
     );
+  }
+}
+
+const styles = {
+  text: {
+    color: "#ffffff"
   }
 }
 
