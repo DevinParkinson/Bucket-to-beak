@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 20180619223540) do
     t.string "nickname"
     t.string "image"
     t.string "email"
+    t.string "phone"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "phone"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
