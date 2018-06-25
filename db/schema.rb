@@ -10,16 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619223540) do
+ActiveRecord::Schema.define(version: 20180625161210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "phones", force: :cascade do |t|
-    t.bigint "user_id"
+  create_table "people", force: :cascade do |t|
+    t.string "phone"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_phones_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,15 +46,14 @@ ActiveRecord::Schema.define(version: 20180619223540) do
     t.string "nickname"
     t.string "image"
     t.string "email"
-    t.string "phone"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "phones", "users"
 end
