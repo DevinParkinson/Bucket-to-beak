@@ -41,7 +41,7 @@ class Home extends Component {
     return (
       <FullApp>
         <AppContainer>
-          <Link to="/register" style={styles.text}>
+          <Link to="/sign-up" style={styles.text}>
             <Button fluid attached="top" positive>
               Sign Up Now!
             </Button>
